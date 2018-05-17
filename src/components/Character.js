@@ -4,11 +4,12 @@ class Character extends Component {
  
   render() {
     const healthPercent = this.props.currentHealth/this.props.health;
+    const isDead = this.props.currentHealth <= 0;
 
     return (
         <div className='character'>
           <div>
-            <img src={this.props.img} alt=""/>
+            <img src={ isDead ? 'images/dead.png' : this.props.img} alt=""/>
             <div className="health-bar">
               <div>
                 <span className="health-left" style={{width: `${healthPercent * 100}%`}}></span>

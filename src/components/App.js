@@ -16,6 +16,7 @@ class App extends Component {
                 img: 'images/avalon.png',
                 health: 32,
                 currentHealth: 32,
+                revenge: 1,
                 strength: 1,
                 defense: 0,
                 movement: 2,
@@ -28,6 +29,7 @@ class App extends Component {
                 img: 'images/konung.png',
                 health: 52,
                 currentHealth: 52,
+                revenge: 1,
                 strength: 2,
                 defense: 2,
                 movement: 1,
@@ -38,15 +40,14 @@ class App extends Component {
         },
         player1Hits: {},
         player2Hits: {}
-    }
+    };
 
     roll = () => {
         // play audio
         this.audio.currentTime = 0; // rewind sound
         this.audio.play();
 
-        const ANGLE = {...commonConstants.DICES_ANGLES};
-      
+        // animate dices
         let dices = Array.prototype.slice.call(document.querySelectorAll('.cubic'));
         let speed = 500;
         const results = {};
@@ -112,9 +113,33 @@ class App extends Component {
         // copy players
         const player1 = {...this.state.players.player1};
         const player2 = {...this.state.players.player2};
+
+        // update revenge count
+        player1.revenge = player1Hits.revenge;
+        player2.revenge = player2Hits.revenge;
+
+        // predict defender death to prevent revenge damage
+        var isPlayer1Dead = false;
+        var isPlayer2Dead = false;
+
+        // if player 1 is Attacker
+        if ( player1Hits.attacking ) {
+            isPlayer2Dead = player2.currentHealth - player2DamageReceived <= 0;
+        }
+
+        // if player 2 is Attacker
+        if ( player2Hits.attacking ) {
+            isPlayer1Dead = player1.currentHealth - player1DamageReceived <= 0;
+        }
+
         // modify health
-        player1.currentHealth = player1.currentHealth - player1DamageReceived;
-        player2.currentHealth = player2.currentHealth - player2DamageReceived;
+        if ( !isPlayer2Dead ) {
+            player1.currentHealth = player1.currentHealth - player1DamageReceived;
+        }
+
+        if ( !isPlayer1Dead ) {
+            player2.currentHealth = player2.currentHealth - player2DamageReceived;
+        }
 
         this.setState({
             players : {
@@ -169,3 +194,4 @@ class App extends Component {
 }
 
 export default App;
+
