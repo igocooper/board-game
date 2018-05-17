@@ -3,7 +3,12 @@ import React, { Component, Fragment } from 'react';
 class Character extends Component {
  
   render() {
-    const healthPercent = this.props.currentHealth/this.props.health;
+    let health = this.props.currentHealth;
+    // fix health percent for negative numvers
+    if (health < 0 ) {
+      health = 0;
+    }
+    const healthPercent = health/this.props.health;
     const isDead = this.props.currentHealth <= 0;
 
     return (

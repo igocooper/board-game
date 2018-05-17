@@ -7,6 +7,8 @@ import { calculateAttack, calculateDefense, calculateDamage } from '../utils/com
 
 import Dices from './Dices';
 import Character from './Character';
+import Controls from './Controls';
+import { ENGINE_METHOD_DIGESTS } from 'constants';
 
 class App extends Component {
     state = {
@@ -158,34 +160,24 @@ class App extends Component {
             <div className="board">
                 <div>
                     <Character {...this.state.players.player1}/>
-                    <button onClick={ () => {
-                        this.attack(this.state.players.player1, 'player1Hits');
-                    }}
-                    > 🗡 Attack
-                    </button>
-                    <button onClick={ () => {
-                        this.defense(this.state.players.player1, 'player1Hits');
-                    }}
-                    >
-                     🛡 Defense
-                     </button>
-                     <button onClick={this.round}> 🎯 Round</button>
+                    <Controls 
+                        player={this.state.players.player1} 
+                        hits='player1Hits'
+                        attack={this.attack} 
+                        defense={this.defense} 
+                        round={this.round} 
+                    />
                 </div>
                 <Dices roll={this.roll}/>
                 <div>
                     <Character {...this.state.players.player2}/>
-                    <button onClick={ () => {
-                        this.attack(this.state.players.player2, 'player2Hits');
-                    }}
-                    > 🗡 Attack
-                    </button>
-                    <button onClick={ () => {
-                        this.defense(this.state.players.player2, 'player2Hits');
-                    }}
-                    >
-                     🛡 Defense
-                     </button>
-                     <button onClick={this.round}> 🎯 Round</button>
+                    <Controls 
+                        player={this.state.players.player2} 
+                        hits='player2Hits'
+                        attack={this.attack} 
+                        defense={this.defense} 
+                        round={this.round} 
+                    />
                 </div>
                 <audio ref={(element) => { this.audio = element; }} src="sounds/dice.mp3"></audio>
             </div>
