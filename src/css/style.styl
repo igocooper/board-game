@@ -9,7 +9,39 @@ button
   cursor: pointer
 
 .board 
-  display: flex;
+  display: flex
   justify-content: space-around
   align-items: center
   height 100vh
+  /* Portrait */
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+        flex-direction: column
+  }
+  
+
+.log 
+    display: none
+    min-width: 286px
+    min-height: 30px
+    margin: 0
+    background: #2f2d2d
+    color: #fff
+    font-size: 12px
+    padding: 5px 10px  
+    font-family: "Roboto", sans-serif
+    /* Portrait */
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+          display: block
+    }
+    
+
+    .dodge
+      color green 
+    .crit
+      color red
+    .luck
+      color gold
+    .devider
+      font-size: 16px  
+
+     

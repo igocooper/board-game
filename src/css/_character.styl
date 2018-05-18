@@ -9,13 +9,20 @@
 
     > div img 
         width: 120px
-        height: 180px
+        height: 160px
+        /* Portrait */
+        @media screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+                width: 100px
+                height: 140px
+        }
+       
 
     > ul 
         list-style: none
         color: #fff 
         padding-left 15px
         min-width: 160px
+        margin 0
 
 
         li 
@@ -26,6 +33,11 @@
             font-weight: 600
             font-family: 'Arial', sans-serif
             font-size: 18px
+
+            /* Portrait */
+            @media screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+                font-size: 14px
+            }
 
             &.number 
                 margin-top 4px
@@ -43,7 +55,7 @@
         > div 
                 position: relative
                 background: #000
-                width: 120px
+                width: 100%
                 border-radius: 6px
                 height: 10px
                 border: 1px #6f0606 solid

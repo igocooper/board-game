@@ -456,13 +456,21 @@ button[class*="btn"] {
 }
 .character > div img {
   width: 120px;
-  height: 180px;
+  height: 160px;
+/* Portrait */
+}
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .character > div img {
+    width: 100px;
+    height: 140px;
+  }
 }
 .character > ul {
   list-style: none;
   color: #fff;
   padding-left: 15px;
   min-width: 160px;
+  margin: 0;
 }
 .character > ul li {
   font-size: 12px;
@@ -472,6 +480,12 @@ button[class*="btn"] {
   font-weight: 600;
   font-family: 'Arial', sans-serif;
   font-size: 18px;
+/* Portrait */
+}
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .character > ul li span {
+    font-size: 14px;
+  }
 }
 .character > ul li span.number {
   margin-top: 4px;
@@ -489,7 +503,7 @@ button[class*="btn"] {
 .character .health-bar > div {
   position: relative;
   background: #000;
-  width: 120px;
+  width: 100%;
   border-radius: 6px;
   height: 10px;
   border: 1px #6f0606 solid;
@@ -505,13 +519,19 @@ button[class*="btn"] {
 }
 .dice-wrapper {
   cursor: pointer;
-  max-width: 300px;
+  max-width: 250px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+/* Portrait */
+}
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .dice-wrapper {
+    display: none;
+  }
 }
 .cubic.black > div::before {
   background: #000;
@@ -662,4 +682,42 @@ button {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
+/* Portrait */
+}
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .board {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.log {
+  display: none;
+  min-width: 286px;
+  min-height: 30px;
+  margin: 0;
+  background: #2f2d2d;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  font-family: "Roboto", sans-serif;
+/* Portrait */
+}
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .log {
+    display: block;
+  }
+}
+.log .dodge {
+  color: #008000;
+}
+.log .crit {
+  color: #f00;
+}
+.log .luck {
+  color: #ffd700;
+}
+.log .devider {
+  font-size: 16px;
 }

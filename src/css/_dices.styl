@@ -2,16 +2,17 @@ $width = 50px
 $height = 50px
 
 .dice-wrapper
-  // position absolute
-  // top 50%
-  // left 50%
   cursor: pointer
-  max-width 300px
+  max-width 250px
   // background url('images/desk_bg.jpg'); 
   display flex
   flex-wrap wrap
   // transform translate3d(-50%, -50%, 0)
   font-family 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif
+  /* Portrait */
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+        display: none 
+  }
 
 .cubic.black > div::before 
   background: #000

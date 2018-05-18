@@ -22,7 +22,7 @@ class Character extends Component {
               <p>HP: {this.props.currentHealth}/{this.props.health}</p>
             </div>
           </div>
-          <ul>Skills:
+          <ul>
             <li>
               <span className="icon">❤️</span>
                Health: <span className='number hp'>{this.props.health}</span>

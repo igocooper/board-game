@@ -8,6 +8,7 @@ import { calculateAttack, calculateDefense, calculateDamage } from '../utils/com
 import Dices from './Dices';
 import Character from './Character';
 import Controls from './Controls';
+import Info from './Info';
 import { ENGINE_METHOD_DIGESTS } from 'constants';
 
 class App extends Component {
@@ -168,7 +169,13 @@ class App extends Component {
                         round={this.round} 
                     />
                 </div>
+                <div>
                 <Dices roll={this.roll}/>
+                <Info 
+                    player1Hits={this.state.player1Hits}
+                    player2Hits={this.state.player2Hits}
+                />
+                </div>
                 <div>
                     <Character {...this.state.players.player2}/>
                     <Controls 
