@@ -126,6 +126,9 @@ pre .val {
   -webkit-filter: progid;
           filter: progid;
 }
+.btn-gradient.cyan :DXImageTransform.Microsoft.gradient(startColorstr='#1bbcc2',
+.btn-gradient.cyan endColorstr='#18a3a8',
+.btn-gradient.cyan GradientType=0),
 .btn-gradient.cyan:active {
   background: #169499;
 }
@@ -136,6 +139,9 @@ pre .val {
   -webkit-filter: progid;
           filter: progid;
 }
+.btn-gradient.red :DXImageTransform.Microsoft.gradient(startColorstr='#fa5a5a',
+.btn-gradient.red endColorstr='#e85151',
+.btn-gradient.red GradientType=0 ),
 .btn-gradient.red:active {
   background: #e35252;
 }
@@ -155,7 +161,9 @@ pre .val {
   -webkit-filter: progid;
           filter: progid;
 }
-
+.btn-gradient.blue :DXImageTransform.Microsoft.gradient(startColorstr='#6698cb',
+.btn-gradient.blue endColorstr='#5c8ab8',
+.btn-gradient.blue GradientType=0 ),
 .btn-gradient.blue:active {
   background: #608fbf;
 }
@@ -167,7 +175,9 @@ pre .val {
   -webkit-filter: progid;
           filter: progid;
 }
-
+.btn-gradient.purple :DXImageTransform.Microsoft.gradient(startColorstr='#cb99c5',
+.btn-gradient.purple endColorstr='#b586b0',
+.btn-gradient.purple GradientType=0 ),
 .btn-gradient.purple:active {
   background: #bd8eb7;
 }
@@ -178,7 +188,9 @@ pre .val {
   -webkit-filter: progid;
           filter: progid;
 }
-
+.btn-gradient.yellow :DXImageTransform.Microsoft.gradient(startColorstr='#f0d264',
+.btn-gradient.yellow endColorstr='#e5c960',
+.btn-gradient.yellow GradientType=0 ),
 .btn-gradient.yellow:active {
   background: #dbc05b;
 }
@@ -190,7 +202,9 @@ pre .val {
   -webkit-filter: progid;
           filter: progid;
 }
-
+.btn-gradient.green :DXImageTransform.Microsoft.gradient(startColorstr='#82c8a0',
+.btn-gradient.green endColorstr='#82c79e',
+.btn-gradient.green GradientType=0 ),
 .btn-gradient.green:active {
   background: #72b08e;
 }
